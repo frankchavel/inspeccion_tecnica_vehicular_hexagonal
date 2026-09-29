@@ -14,19 +14,23 @@ public class VehiculoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "vehiculo_id")
     private Long vehiculoId;
 
     @NotBlank(message = "La placa no puede estar vacía")
-    @Column(unique = true)
+    @Column(name="placa", unique = true, nullable = false)
     private String placa;
 
     @NotBlank(message = "La marca no puede estar vacía")
+    @Column(name = "marca")
     private String marca;
 
     @NotBlank(message = "El modelo no puede estar vacío")
+    @Column(name = "modelo")
     private String modelo;
 
     @NotNull(message = "El año de fabricación no puede ser nulo")
+    @Column(name = "anio_fabricacion")
     private Integer anioFabricacion;
 
     public VehiculoEntity() {
