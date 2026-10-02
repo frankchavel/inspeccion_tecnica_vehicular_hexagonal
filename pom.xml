@@ -18,6 +18,7 @@
 
     <modules>
         <module>msvc-vehiculo</module>
+        <module>msvc-orden-inspeccion</module>
     </modules>
 
     <properties>
