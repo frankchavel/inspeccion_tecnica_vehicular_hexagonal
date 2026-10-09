@@ -13,6 +13,4 @@ public interface ObtenerVehiculoPort {
     List<Vehiculo> obtenerTodos();
 
     Optional<Vehiculo> obtenerPorId(Long id);
-
-    Optional<Vehiculo> obtenerPorPlaca(String placa);
 }

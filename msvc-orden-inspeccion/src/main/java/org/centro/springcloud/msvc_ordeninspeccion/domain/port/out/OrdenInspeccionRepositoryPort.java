@@ -1,6 +1,6 @@
 package org.centro.springcloud.msvc_ordeninspeccion.domain.port.out;
 
-import org.centro.springcloud.msvc_ordeninspeccion.domain.models.OrdenInspeccion;
+import org.centro.springcloud.msvc_ordeninspeccion.domain.model.OrdenInspeccion;
 
 import java.util.List;
 import java.util.Optional;

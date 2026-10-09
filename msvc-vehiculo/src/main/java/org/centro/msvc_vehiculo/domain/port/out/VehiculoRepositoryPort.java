@@ -11,15 +11,13 @@ import java.util.Optional;
  */
 public interface VehiculoRepositoryPort {
 
-    Vehiculo save(Vehiculo vehiculo);
+    Vehiculo guardar(Vehiculo vehiculo);
 
-    Optional<Vehiculo> findById(Long id);
+    Optional<Vehiculo> buscarPorId(Long id);
 
-    List<Vehiculo> findAll();
+    List<Vehiculo> listar();
 
-    Optional<Vehiculo> findByPlaca(String placa);
+    void eliminar(Long id);
 
-    void deleteById(Long id);
-
-    boolean existsById(Long id);
+    boolean existePlaca(String placa);
 }

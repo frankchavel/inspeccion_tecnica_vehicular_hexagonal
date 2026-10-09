@@ -1,13 +1,13 @@
 package org.centro.msvc_vehiculo.infrastructure.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import java.time.LocalDate;
 
-/**
- * Entidad JPA que representa la tabla "vehiculo" en la base de datos.
- * Solo existe en la capa de infraestructura.
- */
 @Entity
 @Table(name = "vehiculo")
 public class VehiculoEntity {
@@ -17,70 +17,80 @@ public class VehiculoEntity {
     @Column(name = "vehiculo_id")
     private Long vehiculoId;
 
-    @NotBlank(message = "La placa no puede estar vacía")
-    @Column(name="placa", unique = true, nullable = false)
+    @Column(nullable = false, unique = true)
     private String placa;
 
-    @NotBlank(message = "La marca no puede estar vacía")
-    @Column(name = "marca")
+    @Column(nullable = false)
     private String marca;
 
-    @NotBlank(message = "El modelo no puede estar vacío")
-    @Column(name = "modelo")
+    @Column(nullable = false)
     private String modelo;
 
-    @NotNull(message = "El año de fabricación no puede ser nulo")
-    @Column(name = "anio_fabricacion")
+    @Column(name = "anio_fabricacion", nullable = false)
     private Integer anioFabricacion;
+
+    @Column(name = "numero_soat", nullable = false)
+    private String numeroSoat;
+
+    @Column(name = "fecha_vencimiento_soat", nullable = false)
+    private LocalDate fechaVencimientoSoat;
+
+    @Column(name = "numero_titulo_propiedad", nullable = false)
+    private String numeroTituloPropiedad;
+
+    @Column(name = "titulo_valido", nullable = false)
+    private Boolean tituloValido;
 
     public VehiculoEntity() {
     }
 
-    public VehiculoEntity(Long vehiculoId, String placa, String marca, String modelo, Integer anioFabricacion) {
+    public VehiculoEntity(Long vehiculoId, String placa, String marca, String modelo,
+            Integer anioFabricacion, String numeroSoat, LocalDate fechaVencimientoSoat,
+            String numeroTituloPropiedad, Boolean tituloValido) {
         this.vehiculoId = vehiculoId;
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
         this.anioFabricacion = anioFabricacion;
+        this.numeroSoat = numeroSoat;
+        this.fechaVencimientoSoat = fechaVencimientoSoat;
+        this.numeroTituloPropiedad = numeroTituloPropiedad;
+        this.tituloValido = tituloValido;
     }
 
     public Long getVehiculoId() {
         return vehiculoId;
     }
 
-    public void setVehiculoId(Long vehiculoId) {
-        this.vehiculoId = vehiculoId;
-    }
-
     public String getPlaca() {
         return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public String getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getModelo() {
         return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 
     public Integer getAnioFabricacion() {
         return anioFabricacion;
     }
 
-    public void setAnioFabricacion(Integer anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
+    public String getNumeroSoat() {
+        return numeroSoat;
+    }
+
+    public LocalDate getFechaVencimientoSoat() {
+        return fechaVencimientoSoat;
+    }
+
+    public String getNumeroTituloPropiedad() {
+        return numeroTituloPropiedad;
+    }
+
+    public Boolean getTituloValido() {
+        return tituloValido;
     }
 }

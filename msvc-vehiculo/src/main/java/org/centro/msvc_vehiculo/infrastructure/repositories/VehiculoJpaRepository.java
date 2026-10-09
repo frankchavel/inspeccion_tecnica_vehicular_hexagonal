@@ -1,15 +1,13 @@
 package org.centro.msvc_vehiculo.infrastructure.repositories;
 
 import org.centro.msvc_vehiculo.infrastructure.entities.VehiculoEntity;
-import org.springframework.data.repository.CrudRepository;
-
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Repositorio Spring Data JPA para VehiculoEntity.
  * Solo existe en la capa de infraestructura.
  */
-public interface VehiculoJpaRepository extends CrudRepository<VehiculoEntity, Long> {
+public interface VehiculoJpaRepository extends JpaRepository<VehiculoEntity, Long> {
 
-    Optional<VehiculoEntity> findByPlaca(String placa);
+    boolean existsByPlaca(String placa);
 }
