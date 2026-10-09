@@ -1,0 +1,7 @@
+package org.centro.springcloud.msvc.msvc_inspeccion_tecnica.domain.port.in;
+import java.util.Optional;
+import org.centro.springcloud.msvc.msvc_inspeccion_tecnica.domain.model.DefectoDetectado;
+import org.centro.springcloud.msvc.msvc_inspeccion_tecnica.domain.model.InspeccionTecnica;
+public interface RegistrarDefectoPort {
+    Optional<InspeccionTecnica> registrarDefecto(Long id, Long pruebaId, DefectoDetectado defecto);
+}

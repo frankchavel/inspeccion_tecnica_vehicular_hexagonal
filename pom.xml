@@ -19,6 +19,7 @@
     <modules>
         <module>msvc-vehiculo</module>
         <module>msvc-orden-inspeccion</module>
+        <module>msvc-inspeccion-tecnica</module>
         <module>msvc-cliente</module>
     </modules>
 
@@ -40,5 +41,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 
 </project>
