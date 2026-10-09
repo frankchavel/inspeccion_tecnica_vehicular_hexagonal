@@ -93,6 +93,7 @@ public class InspeccionTecnica {
         if (vehiculoId == null) throw new IllegalArgumentException("El vehiculo es obligatorio");
     }
     public Long getInspeccionId() { return inspeccionId; }
+
     public Long getOrdenInspeccionId() { return ordenInspeccionId; }
     public Long getVehiculoId() { return vehiculoId; }
     public EstadoInspeccion getEstado() { return estado; }
